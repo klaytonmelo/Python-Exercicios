@@ -6,20 +6,19 @@ calcule o valor valor da prestação mensal, sabedo que ela não pode
 exceder 30% do salario ou então o emprestimo será negado
 '''
 
-valor_casa = float(input("Digite o valor da casa? "))
-salario = float(input("Digite o valor do seu salário:"))
+valor_casa = float(input("Digite o valor da casa R$ "))
+salario = float(input("Digite o valor do seu salário R$ "))
 
-p_ano = int(input("Em quantos anos deseja pagar :"))
+anos = int(input("Em quantos anos deseja pagar: "))
 
 #calculo de porcentagem
 pct_limite = salario * 0.30
 
-meses = p_ano * 12
+prestacao = valor_casa / (anos * 12)
 
-print(salario)
-'''p_mes = valor_casa / meses
-print(pct_limite)
-if p_mes > pct_limite:
-    print("Emprestimo negado! \nO valor das parcelas excede 30% de seu salário!")
+print(f"Para pagar uma casa de R${valor_casa:.2f} em {anos} anos a prestação será de R${prestacao}")
+
+if prestacao > pct_limite:
+    print("Emprestimo NEGADO!")
 else:
-    print("Emprestimo Confirmado!")'''
+    print("Emprestimo CONCEDIDO!")
