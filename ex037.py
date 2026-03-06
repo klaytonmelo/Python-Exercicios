@@ -1,5 +1,3 @@
-from weakref import finalize
-
 print("escolha a base de conversão:")
 print("(1) - binario")
 print("(2) - octal")
@@ -16,8 +14,10 @@ octal = oct(n)
 hexadecimal = hex(n)
 
 if nconv == 1:
-    print(f"O numero {n} é {binário} em binário")
+    print(f"O numero {n} é {binário [2:]} em binário")
 elif nconv == 2:
-    print(f"O numero {n} é {octal} em octal")
+    print(f"O numero {n} é {octal [2:]} em octal")
 elif nconv == 3:
-    print(f"O numero {n} é {hexadecimal} em hexadecimal")
+    print(f"O numero {n} é {hexadecimal [2:]} em hexadecimal")
+else:
+    print("Tente novamente!")
