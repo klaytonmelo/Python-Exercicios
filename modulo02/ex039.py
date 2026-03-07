@@ -1,5 +1,6 @@
 import datetime
-ano_atual = datetime.date.today().year
+from datetime import date
+ano_atual = date.today().year
 data_n = int(input("Ano de nascimento: "))
 
 idade = ano_atual - data_n
