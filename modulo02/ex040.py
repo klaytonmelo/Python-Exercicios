@@ -1,12 +1,14 @@
-n1 = float(input("Digite sua primeira nota: "))
-n2 = float(input("Digite sua segunda nota: "))
+n1 = float(input("Primeira nota: "))
+n2 = float(input("segunda nota:"))
+n3 = float(input("Terceira nota: "))
+n4 = float(input("Quarta nota: "))
 
-media = (n1 + n2) / 2
-print(f"sua média é: {media}")
+media = (n1 + n2 + n3 + n4) / 4
 
-if media >= 7:
-    print("Aprovado")
-elif media >= 5:
-    print("Reculperaçao")
+print(f"A média do aluno é {media}")
+if media < 7 and media >= 5:
+    print("O aluno esta de RECUPERAÇÃO!")
+elif media < 5:
+    print("O aluno esta REPROVADO!")
 else:
-    print("Reprovado")
+    print("O aluno esta APROVADO!")
