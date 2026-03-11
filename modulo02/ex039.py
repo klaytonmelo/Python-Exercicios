@@ -1,4 +1,3 @@
-import datetime
 from datetime import date
 ano_atual = date.today().year
 data_n = int(input("Ano de nascimento: "))
@@ -9,7 +8,7 @@ print(f"quem nasceu em {data_n} tem {idade} em {ano_atual}")
 
 if idade == 18:
     print("Você tem que se alistar imediatamete!")
-elif(idade < 18):
+elif idade < 18:
     print(f"Você ainda não tem 18 anos. Ainda faltam {18 - idade} para o alistamento!")
     print(f"Seu alistamento será em {ano_atual + (18 - idade)}")
 else:
