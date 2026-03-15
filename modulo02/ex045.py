@@ -1,64 +1,107 @@
-import random
+#Crie um programa que faça o computador jogar jokenpô (pedra, papel, tesoura)
 
-jop = random.randint(0,2)
+import random
+from time import sleep
+import os
+
+
+def limpar():
+    os.system("cls" if os.name == "nt" else "clear")
+
+itens = ("Pedra", "Papel", "Tesoura")
 
 while True:
+    limpar()
+    comp = random.randint(0,2)
+    
     print("Suas opções")
     print("[0] PEDRA")
     print("[1] PAPEL")
     print("[2] TESOURA")
 
-    op = int(input("Qual é a sua jogada? "))
+    try:
+        player = int(input("Digite um número: "))
+    except ValueError:
+        print("Erro! Digite apenas números.")
+        while ValueError:
+            try:
+                player = int(input("Digite um número: "))
+                break
+            except ValueError:
+                print("Erro! Digite apenas números.")
+    if player == 0 or player == 1 or player == 2:
 
-    #O COMPUTADOR JOGOU
-    if jop == 0:
-        opcomp = "PEDRA"
-    elif jop == 1:
-        opcomp = "PAPEL"
-    elif jop == 2:
-        opcomp = "TESOURA"
-
-    if op == 0 or op == 1 or op == 2:
-        #JOGADOR
-        if op == 0:
-            opjog = "PEDRA"
-        elif op == 1:
-            opjog = "PAPEL"
-        elif op == 2:
-            opjog = "TESOURA"
-
-        print("JO \n KEN \n   PO!!!")
-
+        print("JO")
+        sleep(1)
+        print("KEN")
+        sleep(1)
+        print("PO!!!")
+        limpar()
         print("-="*10)
-        print(f"O computador jogou {opcomp}\nJogador jogou {opjog}")
+        print(f"O computador jogou {itens[comp]}\nJogador jogou {itens[player]}")
         print("-="*10)
 
-        if opjog == "PAPEL" and opcomp == "PAPEL" or opjog == "PEDRA" and opcomp == "PEDRA" or opjog == "TESOURA" and opcomp == "TESOURA":
-            print("EMPATE!")
-        elif opjog == "PEDRA" and opcomp == "PAPEL":
-            print("Computador GANHOU!")
-        elif opcomp == "PEDRA" and opjog == "PAPEL":
-            print("Jogador GANHOU!")
-        elif opjog == "PAPEL" and opcomp == "TESOURA":
-            print("Computador GANHOU!")
-        elif opcomp == "PAPEL" and opjog == "TESOURA":
-            print("Jogador GANHOU!")
-        elif opjog == "TESOURA" and opcomp == "PEDRA":
-            print("Computador GANHOU!")
-        elif opcomp == "TESOURA" and opjog == "PEDRA":
-            print("JOgador GANHOU!")
+        if comp == 0:
+            if player == 0:
+                print("EMPATE")
+            elif player == 1:
+                print("Jogador GANHOU!")
+            elif player == 2:
+                print("Computador GANHOU!")
+            else:
+                print("erro")
+        elif comp == 1:
+            if player == 0:
+                print("Computador GANHOU!")
+            elif player == 1:
+                print("EMPATE!")
+            elif player == 2:
+                print("Jogador GANHOU!")  
+            else:
+                print("erro")  
+        elif comp == 2:
+            if player == 0:
+                print("Jogador GANHOU!")
+            elif player == 1:
+                print("Computador GANHOU!")
+            elif player == 2:
+                print("EMPATE!")
+            else:
+                print("erro")
         else:
             print("alguem ganhou! OU o Código se recusa a ajudar!!")
 
         print("="*20)
+
+        sleep(2)
         print("Deseja jogar de novo?")
+        sleep(1)
         jdn = str(input("Sim (S) ou Não(N):"))
+
         print("=+="*10)
-        if jdn == "S":
+        limpar()
+
+        #pergunta se o jogador deseja jogar denovo!
+        if jdn.upper() in ["S", "SIM"]:
             print("Tenha uma boa partida!!")
-        else:
+            sleep(3)
+        elif jdn.upper() in ["N", "NÃO", "NAO"]:
             print("Seu jogo minhas regras!\nJOGUE DE NOVO!!!")
             print("Tenha uma boa partida!")
+            sleep(3)
+        else:
+            print("ERRO!")
+            sleep(3)
         print("=+="*10)
+    elif str(player) == "":
+        print("Jogo INVALIDO")
+        sleep(1)
+        print("Jogador PERDEU!!")
+        print("Tente NOVAMENTE!!!")
+        sleep(2)
     else:
-        print("Jogo INVALIDO\nJogador PERDEU!!\nTente NOVAMENTE!!!")
+        print("Jogo INVALIDO")
+        sleep(1)
+        print("Jogador PERDEU!!")
+        print("Tente NOVAMENTE!!!")
+        sleep(2)
