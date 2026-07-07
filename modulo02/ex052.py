@@ -20,3 +20,7 @@ for c in range(1, n + 1):
         print(f"[red]{c}[/]")
 
 print(f"O número {n}, foi divisivel {tot} vezes")
+if tot == 2:
+    print("por isso ele é PRIMO!")
+else:
+    print("Por isso ele não é PRIMO!")
