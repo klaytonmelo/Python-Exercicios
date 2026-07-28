@@ -5,10 +5,11 @@ correto..
 '''
 from rich import print# biblioteca rich está no módulo 4 - POO
 
-sexo = str(input('Digite seu sexo [M/F]: '))
+sexo = str(input('Digite seu sexo [M/F]: ')).strip().upper()[0]
 
 while sexo not in "MFfm":
     print("[red]As informações estão incorretas![/red]")
-    sexo = str(input('Digite seu sexo [M/F]'))
+    sexo = str(input('Digite seu sexo [M/F]')).strip().upper()[0]
 
-print("[blue]informações corretas!\nObrigado![/blue]")
+print("[blue]informações corretas! Obrigado![/blue]")
+print(f"[yellow]Sexo {sexo}[/] registrado com sucesso!")
