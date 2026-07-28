@@ -21,12 +21,18 @@ sleep(3)
 palpites = 0
 while jogador != computador:
     palpites += 1
-    print("[red]Você errou!! tente novamente![/]")
-    jogador = int(input('Em que número eu pensei? '))
+
+    if jogador < computador:
+        print("[red]Você errou!! 'maior' tente novamente![/]")
+        jogador = int(input('Em que número eu pensei? '))
+    else:
+        print("[red]Você errou!! 'menor' tente novamente![/]")
+        jogador = int(input('Em que número eu pensei? '))
+
     print("[green]processando...[green]")
     sleep(2)
 
 print("[blue]Parabéns você acertou!!![/]")
 print(15*"[black]-=[/]")
-print(f"foram nescessarios {palpites} palpites para você vencer!")
+print(f"foram nescessarias {palpites} tentativas para você vencer!")
 print(15*"[black]-=[/]")
