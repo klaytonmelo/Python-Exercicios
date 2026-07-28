@@ -15,7 +15,7 @@ n2 = int(input('Segundo número: '))
 sair_programa = False
 
 while sair_programa == False:
-    print("Digite a opção que você deseja! ")
+    print("[blue]Digite a opção que você deseja![/]")
     print("[1] somar")
     print("[2] multiplicar")
     print("[3] maior")
@@ -34,9 +34,18 @@ while sair_programa == False:
         else:
             print(f"O número {n2} é maior que {n1}")
     elif op == 4:
+        print("[blue]Informe os números novamente:[/]")
         n1 = int(input('Primeiro numero: '))
         n2 = int(input('Segundo número: '))
     elif op == 5:
         sair_programa = True
-
+    else:
+        print("[red]Opção incorreta[/]")
+        print("[blue]Informe os números novamente:[/]")
+        n1 = int(input('Primeiro numero: '))
+        n2 = int(input('Segundo número: '))
+        
+    print(10 * "=-=")
     sleep(2)
+
+print("[blue]Fim do programa![/]")
